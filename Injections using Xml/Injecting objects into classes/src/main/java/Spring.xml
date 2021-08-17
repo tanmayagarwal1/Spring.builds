@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "tri" class = "com.uhg.facilitate.inject.objects_to_classes.Triangle">
+    	<property name = "Px" ref = "pointOne" />
+    	<property name = "Py" ref = "pointTwo" />
+    	<property name = "Pz" ref = "pointThree" />
+	
+    </bean>
+    
+    <bean id = "pointOne" class = "com.uhg.facilitate.inject.objects_to_classes.Point">
+    	<property name="x" value = "0"></property>
+    	<property name="y" value = "0"></property>
+    </bean>
+    
+    <bean id = "pointTwo" class = "com.uhg.facilitate.inject.objects_to_classes.Point">
+    	<property name="x" value = "2"></property>
+    	<property name="y" value = "3"></property>
+    </bean>
+    
+    <bean id = "pointThree" class = "com.uhg.facilitate.inject.objects_to_classes.Point">
+    	<property name="x" value = "0"></property>
+    	<property name="y" value = "3"></property>
+    </bean>
+
+</beans>
