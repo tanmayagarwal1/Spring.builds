@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id = "parentTri" class = "com.uhg.list.metadata.inheritence.Tri">
+		<property name = "points">
+			<list>
+				<ref bean = "pointA"></ref>
+				<ref bean = "pointB"></ref>
+			</list>
+		</property>
+	</bean>
+	
+	
+    <bean id = "tri" class = "com.uhg.list.metadata.inheritence.Tri" parent = "parentTri">
+    </bean>
+    
+    <bean id = "triwithThreepoints" class = "com.uhg.list.metadata.inheritence.Tri" parent = "parentTri">
+    	<property name = "points">
+			<list merge = "true">
+				<ref bean = "pointC"></ref>
+			</list>
+		</property>
+    </bean>
+    
+    <bean id = "pointA" class = "com.uhg.list.metadata.inheritence.Points">
+    	<property name = "x" value = "20" />
+    	<property name = "y" value = "-20" />
+    </bean>
+    
+    <bean id = "pointB" class = "com.uhg.list.metadata.inheritence.Points">
+    	<property name = "x" value = "30" />
+    	<property name = "y" value = "-30" />
+    </bean>
+    
+    <bean id = "pointC" class = "com.uhg.list.metadata.inheritence.Points">
+    	<property name = "x" value = "40" />
+    	<property name = "y" value = "-40" />
+    </bean>
+
+</beans>
